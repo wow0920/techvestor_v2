@@ -1,0 +1,953 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #b1b1b1 #f5f5f5;
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b1b1b1;
+    border-radius: 20px;
+    border: 1px solid #f5f5f5;
+}
+
+html {
+    scroll-behavior: initial;
+}
+
+body {
+    @include margnpad;
+    font-family: $bodyFont;
+    color: $bodycolor;
+    font-size: $bodyfontSize;
+    line-height: 39px;
+    letter-spacing: -0.039em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    @include flex;
+    @include flex-column;
+    overflow: hidden;
+    overflow-y: auto;
+    @include xl-large-pc {
+        font-size: 25px;
+        line-height: 36px;
+    }
+    @include large-pc {
+        font-size: 22px;
+        line-height: 33px;
+    }
+    @include medium-pc {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    @include laptop {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    @include mini-smartphone {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    &.scroll {
+        overflow: hidden;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+main,
+header,
+section,
+footer {
+    width: 100%;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+::-moz-selection {
+    color: $white;
+    background-color: $warm-blue;
+}
+
+::selection {
+    color: $white;
+    background-color: $warm-blue;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $bodycolor;
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-transition: background-color 500000s ease-in-out 0s !important;
+    transition: background-color 500000s ease-in-out 0s !important;
+}
+
+input[type=number]::-webkit-outer-spin-button, 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    @include laptop {
+        margin-bottom: 0.75rem;
+    }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-weight: 700;
+    line-height: 86px;
+    font-family: $headingFont;
+    letter-spacing: -0.039em;
+    @include medium-pc {
+        line-height: 76px;
+    }
+    @include laptop {
+        line-height: 64px;
+    }
+    @include tablet {
+        line-height: 52px;
+    }
+    @include mini-smartphone {
+        line-height: 42px;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 100px;
+    @include xl-large-pc {
+        font-size: 90px;
+    }
+    @include large-pc{
+        font-size: 80px;
+    }
+    @include medium-pc {
+        font-size: 75px;
+    }
+    @include laptop {
+        font-size: 60px;
+    }
+    @include tablet {
+        font-size: 48px;
+    }
+    @include phone-landscape {
+        font-size: 36px;
+    }
+    @include mini-smartphone {
+        font-size: 32px;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 70px;
+    @include xl-large-pc {
+        font-size: 60px;
+    }
+    @include large-pc{
+        font-size: 55px;
+    }
+    @include medium-pc {
+        font-size: 45px;
+    }
+    @include laptop {
+        font-size: 40px;
+    }
+    @include tablet {
+        font-size: 35px;
+    }
+    @include phone-landscape {
+        font-size: 32px;
+    }
+    @include mini-smartphone {
+        font-size: 28px;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 55px;
+    @include xl-large-pc {
+        font-size: 50px;
+    }
+    @include large-pc{
+        font-size: 45px;
+    }
+    @include medium-pc {
+        font-size: 40px;
+    }
+    @include laptop {
+        font-size: 35px;
+    }
+    @include tablet {
+        font-size: 30px;
+    }
+    @include phone-landscape {
+        font-size: 28px;
+    }
+    @include mini-smartphone {
+        font-size: 24px;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 45px;
+    @include medium-pc {
+        font-size: 30px;
+    }
+    @include tablet {
+        font-size: 26px;
+    }
+    @include phone-landscape {
+        font-size: 24px;
+    }
+    @include mini-smartphone {
+        font-size: 20px;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 35px;
+    @include large-pc {
+        font-size: 30px;
+    }
+    @include medium-pc {
+        font-size: 26px;
+    }
+    @include tablet {
+        font-size: 22px;
+    }
+    @include phone-landscape {
+        font-size: 20px;
+    }
+    @include mini-smartphone {
+        font-size: 18px;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 25px;
+    @include tablet {
+        font-size: 20px;
+    }
+    @include phone-landscape {
+        font-size: 18px;
+    }
+    @include mini-smartphone {
+        font-size: 16px;
+    }
+}
+
+p {
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.039em;
+    @include xl-large-pc {
+        font-size: 25px;
+        line-height: 36px;
+    }
+    @include large-pc {
+        font-size: 22px;
+        line-height: 33px;
+    }
+    @include medium-pc {
+        font-size: 20px;
+    }
+    @include laptop {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    @include mini-smartphone {
+        font-size: 14px;
+        line-height: 26px;
+    }
+}
+
+.commonHeading {
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 103px;
+    font-family: $headingFont;
+    letter-spacing: -0.039em;
+    @include xl-large-pc {
+        font-size: 90px;
+        line-height: 93px;
+    }
+    @include large-pc{
+        font-size: 80px;
+    }
+    @include medium-pc {
+        font-size: 75px;
+        line-height: 83px;
+    }
+    @include laptop {
+        font-size: 60px;
+        line-height: 67px
+    }
+    @include tablet {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    @include phone-landscape {
+        font-size: 44px;
+        line-height: 54px;
+    }
+    @include mini-smartphone {
+        font-size: 38px;
+        line-height: 48px;
+    }
+}
+
+.black {
+    font-weight: 900;
+}
+
+.extraBold {
+    font-weight: 800;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.semoBold {
+    font-weight: 600;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.lightFont {
+    font-weight: 300;
+}
+
+.upper-case {
+    text-transform: uppercase;
+}
+
+button,
+button:hover,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    padding-left: 20px;
+    margin: 0 0 1.5rem;
+}
+
+a,
+img,
+button {
+    @include transition(0.3s ease-in-out);
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: $bodycolor;
+    text-decoration: none;
+    outline: none !important;
+    @include transition(all 0.3s ease-in-out)
+}
+
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none;
+    outline: none;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type=submit] {
+    @include transition(0.3s ease-in-out);
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+.list-style-none {
+    @include margnpad;
+    list-style: none;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.middle {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.container {
+    @media (min-width: 1500px) {
+        max-width: 1446px;
+    }
+    @media (min-width:1700px) {
+        max-width: 1688px;
+    }
+}
+
+.commonBtn {
+    font-size: 18px;
+    line-height: 22px;
+    color: $white;
+    text-transform: uppercase;
+    @include padding (30px, 40px, 30px, 40px);
+    @include border-radius(50px);
+    @include box-shadow(0 0 40px rgba($black, 0.16));
+    display: inline-block;
+    width: 308px;
+    text-align: center;
+    border: none;
+    @include transition (all 0.3s ease-in-out);
+    @include medium-pc {
+        font-size: 16px;
+        line-height: 20px;
+        width: auto;
+        @include padding (26px, 36px, 26px, 36px);
+    }
+    @include laptop {
+        font-size: 14px;
+        @include padding (20px, 30px, 20px, 30px);
+    }
+    @include mini-tablet {
+        @include padding (15px, 25px, 15px, 25px);
+    }
+    img,
+    svg {
+        margin-left: 16px;
+        display: inline;
+        @include transition (all 0.3s ease-in-out);
+        @include medium-pc {
+            margin-left: 14px;
+        }
+        @include laptop {
+            margin-left: 10px;
+        }
+        @include mini-tablet {
+            max-width: 18px;
+        }
+    }
+}
+
+.commonBtn.blueBg:hover {
+    background-color: $bodycolor;
+}
+
+.commonBtn.blackBg:hover {
+    background-color: $warm-blueTint1;
+}
+
+.blackBg {
+    background-color: $bodycolor;
+}
+
+.blackClr {
+    color: $black;
+}
+
+.blueBg {
+    background-color: $warm-blueTint1;
+}
+
+.blueClr {
+    color: $warm-blue;
+}
+
+.whiteBg {
+    background-color: $white
+}
+
+.whiteClr {
+    color: $white;
+}
+
+.roundedCorner__left {
+    @include border-radius-s(500px, 0, 0, 500px);
+    overflow: hidden;
+}
+
+.roundedCorner__right {
+    @include border-radius-s(0, 300px, 300px, 0);
+    @include transition (all 600ms ease-in-out);
+    overflow: hidden;
+    @include tablet {
+        @include border-radius-s(0, 150px, 150px, 0);
+    }
+    @include mini-tablet {
+        @include border-radius-s(0, 100px, 100px, 0);
+    }
+}
+
+.roundedCorner__right[data-emergence="visible"] {
+    @include border-radius-s(0, 500px, 500px, 0);
+    @include transition (all 600ms ease-in-out);
+    overflow: hidden;
+}
+
+.wideSectionReverse {
+    .roundedCorner__right {
+        @include border-radius-s(300px, 0, 0, 300px);
+        overflow: hidden;
+        @include tablet {
+            @include border-radius-s(150px, 0, 0, 150px);
+        }
+        @include mini-tablet {
+            @include border-radius-s(100px, 0, 0, 100px);
+        }
+    }
+    .roundedCorner__right[data-emergence="visible"] {
+        @include border-radius-s(500px, 0, .0, 500px);
+        overflow: hidden;
+    }
+}
+
+.whiteSmokeBg {
+    background-color: $white-smoke;
+}
+
+.commonBoxshadow {
+    @include box-shadow(0 0 40px rgba($black, 0.16));
+    @include mini-tablet {
+        @include box-shadow(0 0 10px rgba($black, 0.16));
+    }
+}
+
+.slickNextBtn,
+.slickPreviousBtn {
+    width: 104px;
+    height: 104px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 1px solid $bodycolor;
+    @include border-radius (50%);
+    @include position (static);
+    transform: none;
+    @include transition (all 0.3s ease-in-out);
+    @include medium-pc {
+        width: 80px;
+        height: 80px;
+    }
+    @include laptop {
+        width: 60px;
+        height: 60px;
+    }
+    @include tablet {
+        width: 50px;
+        height: 50px;
+    }
+    @include mini-smartphone {
+        width: 40px;
+        height: 40px;
+    }
+    &::before {
+        content: none;
+    }
+    svg {
+        fill: $bodycolor;
+        stroke: $bodycolor;
+        width: 53px;
+        display: inline-block;
+        @include transition (all 0.3s ease-in-out);
+        @include medium-pc {
+            width: 33px;
+        }
+        @include laptop {
+            width: 25px;
+        }
+        @include tablet {
+            width: 22px;
+        }
+    }
+    &:hover {
+        background-color: $bodycolor;
+    }
+    &:hover {
+        svg {
+            fill: $white;
+            stroke: $white;
+        }
+    }
+    &.slick-disabled {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+}
+
+.slickNextBtn {
+    margin-left: 15px;
+    @include laptop {
+        margin-left: 10px;
+    }
+}
+
+.slides-numbers {
+    font-size: 55px;
+    line-height: 67px;
+    @include medium-pc {
+        font-size: 45px;
+        line-height: 57px;
+    }
+    @include laptop {
+        font-size: 38px;
+        line-height: 50px;
+    }
+    @include tablet {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    @include phone-landscape {
+        font-size: 20px;
+    }
+    @include mini-smartphone {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    span {
+        color: $light-grey;
+        &.active {
+            color: $black;
+        }
+    }
+}
+
+.commonBackground {
+    @include background;
+}
+
+.blackCard {
+    @include border-radius-s(160px, 20px, 200px, 20px);
+    height: 100%;
+    @include medium-pc {
+        @include border-radius-s(140px, 20px, 140px, 20px);
+    }
+    @include mini-tablet {
+        @include border-radius-s(80px, 10px, 100px, 10px);
+    }
+    &__inner {
+        @include padding (50px, 60px, 70px, 60px);
+        height: 100%;
+        @include xl-large-pc {
+            padding-left: 55px;
+            padding-right: 55px;
+        }
+        @include large-pc{
+            @include padding (40px, 50px, 60px, 50px);
+        }
+        @include medium-pc {
+            @include padding (40px, 40px, 50px, 40px);
+        }
+        @include mini-tablet {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+        @include phone-landscape {
+            @include padding(40px, 40px, 90px, 40px);
+            min-height: 470px;
+        }
+        @include mini-smartphone {
+            padding-bottom: 60px;
+            min-height: auto;
+        }
+    }
+    &__img {
+        max-width: 87px;
+        margin-left: auto;
+        margin-bottom: 100px;
+        @include large-pc {
+            margin-bottom: 70px;
+        }
+        @include medium-pc {
+            max-width: 70px;
+            margin-bottom: 50px;
+        }
+        @include laptop {
+            max-width: 50px;
+            margin-bottom: 40px;
+        }
+        img,
+        svg {
+            width: 100%;
+        }
+    }
+    &__year {
+        width: auto;
+        margin-left: auto;
+        margin-bottom: 144px;
+        @include xl-large-pc {
+            margin-bottom: 110px;
+        }
+        @include large-pc{
+            margin-bottom: 80px;
+        }
+        @include medium-pc {
+            margin-bottom: 60px;
+        }
+        @include laptop {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 65px;
+            line-height: 86px;
+            margin: 0;
+            @include medium-pc {
+                font-size: 45px;
+                line-height: 65px;
+            }
+            @include laptop {
+                font-size: 40px;
+                line-height: 60px;
+            }
+        }
+    }
+    &__hdng {
+        min-height: 130px;
+        @include flex;
+        @include flex-column;
+        @include justifyend;
+        margin-bottom: 26px;
+        @include medium-pc {
+            min-height: 100px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            line-height: 64px;
+            margin: 0;
+            @include large-pc {
+                line-height: 54px;
+            }
+            @include medium-pc {
+                line-height: 50px;
+            }
+            @include laptop {
+                line-height: 43px;
+            }
+            @include phone-landscape {
+                font-size: 36px;
+                line-height: 41px;
+            }
+            @include mini-smartphone {
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+    }
+    &__cntnt {
+        p {
+            color: $white;
+        }
+    }
+}
+
+.blackCard--hover {
+    @include transition (all 0.3s ease-in-out);
+    svg {
+        fill: $white-smoke;
+    }
+    p,
+    svg {
+        @include transition (all 0.3s ease-in-out);
+    }
+    &:hover {
+        background: $white-smoke;
+        svg {
+            fill: $warm-blueTint1;
+        }
+        p {
+            color: $bodycolor;
+        }
+    }
+}
+
+.textGradient {
+    background: rgb(74, 72, 218);
+    background: linear-gradient(180deg, rgba(74, 72, 218, 1) 0%, rgba(74, 72, 218, 1) 70%, rgba(74, 72, 218, 0.8491771708683473) 73%, rgba(221, 221, 221, 0.577468487394958) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.full_Width {
+    width: 100%;
+}
+
+.fdeIn__leftBig {
+    visibility: hidden;
+    &[data-emergence="visible"] {
+        -webkit-animation-name: fadeIn-LeftBig;
+        animation-name: fadeIn-LeftBig;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes fadeIn-LeftBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-60px);
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn-LeftBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-60px);
+        -ms-transform: translateX(-60px);
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.fdeIn__left {
+    visibility: hidden;
+    &[data-emergence="visible"] {
+        -webkit-animation-name: fadeInLeft;
+        animation-name: fadeInLeft;
+        visibility: visible;
+    }
+}
+
+.fdeIn__Up {
+    visibility: hidden;
+    &[data-emergence="visible"] {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        visibility: visible;
+    }
+}
+
+.fadeIn__Down {
+    visibility: hidden;
+    &[data-emergence="visible"] {
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+        visibility: visible;
+    }
+}

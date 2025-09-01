@@ -1,0 +1,264 @@
+.headerSection {
+    padding: 35px 0;
+    @include position(fixed, 0, 0, auto, 0);
+    @include transition (all 0.6s ease-in-out);
+    z-index: 999;
+    @include laptop {
+        padding: 25px 0;
+    }
+    @include tablet {
+        padding: 16px 0 21px;
+    }
+    &__holder {
+        @include flex;
+        @include justifybetween;
+        @include aligncenter;
+        .menu-icon {
+            display: none;
+            @include tablet {
+                @include flex;
+                @include flex-column;
+                position: relative;
+                min-width: 30px;
+                height: 20px;
+                @include justifybetween;
+                cursor: pointer;
+                span {
+                    position: relative;
+                    width: 100%;
+                    height: 3px;
+                    display: block;
+                    background: $black;
+                    @include transition (0.3s ease-in-out);
+                    &:nth-child(2) {
+                        margin: 5px 0;
+                    }
+                }
+                &.active span:nth-child(2) {
+                    opacity: 0;
+                }
+                &.active span:nth-child(1) {
+                    @include rotateTranlslate(45, 7px, 2px);
+                }
+                &.active span:nth-child(3) {
+                    @include rotateTranlslate(-45, 10px, -5px);
+                }
+            }
+        }
+    }
+    &__logo {
+        max-width: 302px;
+        @include transition (all 0.3s ease-in-out);
+        @include xl-large-pc {
+            max-width: 270px;
+        }
+        @include medium-pc {
+            max-width: 220px;
+        }
+        @include laptop {
+            max-width: 150px;
+        }
+        @include tablet {
+            max-width: 175px;
+        }
+        @include phone-landscape {
+            max-width: 140px;
+        }
+        a {
+            display: block;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &__navigation {
+        @include flex;
+        @include justifybetween;
+        @include aligncenter;
+        .requestBtn {
+            @include padding (22px, 35px, 22px, 35px);
+            margin-left: 39px;
+            width: 251px;
+            img {
+                width: 17px;
+            }
+            @include xl-large-pc {
+                margin-left: 28px;
+                @include padding (18px, 30px, 18px, 30px);
+                width: 240px;
+            }
+            @include medium-pc {
+                width: auto;
+                font-size: 13px;
+                line-height: 18px;
+                margin-left: 20px;
+                @include padding (16px, 26px, 16px, 26px);
+            }
+            @include laptop {
+                @include padding (15px, 15px, 15px, 15px);
+                font-size: 13px;
+                width: 165px;
+                margin-left: 10px
+            }
+            @include tablet {
+                width: 240px;
+                @include padding (20px, 15px, 20px, 15px);
+                font-size: 18px;
+                line-height: 22px;
+                margin: 15px auto;
+            }
+            @include phone-landscape {
+                width: 240px;
+                font-size: 18px;
+                @include padding (20px, 15px, 20px, 15px);
+                line-height: 22px;
+            }
+        }
+        @include tablet {
+            width: 100%;
+            @include flex-column;
+            @include alignstart;
+            display: none;
+            width: 100%;
+            background: $white;
+            height: calc(100vh - 58px);
+            overflow: auto;
+            @include position (absolute, 50px, 0, auto, 0);
+        }
+        @include phone-landscape {
+            height: calc(100vh - 50px);
+        }
+    }
+    &__navbar {
+        @include tablet {
+            width: 100%;
+        }
+        ul {
+            @include flex;
+            @include aligncenter;
+            @include tablet {
+                @include flex-column;
+                @include alignstart;
+            }
+        }
+        li {
+            margin: 0 18px;
+            @include xl-large-pc {
+                margin: 0 14px;
+            }
+            @include medium-pc {
+                margin: 0 10px;
+            }
+            @include laptop {
+                margin: 0 7px;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            @include tablet {
+                width: 100%;
+                margin: 0;
+            }
+            a {
+                font-size: 17px;
+                line-height: 20px;
+                letter-spacing: -0.039em;
+                text-transform: uppercase;
+                @include transition (all 0.3s ease-in-out);
+                @include xl-large-pc {
+                    font-size: 14px;
+                }
+                @include medium-pc {
+                    font-size: 13px;
+                }
+                @include tablet {
+                    font-size: 22px;
+                    line-height: 32px;
+                    font-weight: 700;
+                    display: block;
+                    border-bottom: 1px solid $black;
+                    padding: 22px 40px;
+                }
+                @include mini-tablet {
+                    font-size: 20px;
+                    line-height: 30px;
+                    padding: 20px 40px;
+                }
+                @include phone-landscape {
+                    font-size: 32px;
+                    line-height: 40px;
+                    padding: 21px 30px;
+                }
+                &:hover {
+                    color: $warm-blueTint1;
+                }
+            }
+        }
+    }
+    &.fixed {
+        background-color: $white;
+        padding: 20px 0;
+        @include box-shadow(0 2px 10px -2px rgba($black, 0.1));
+        @include transition (all 0.6s ease-in-out);
+        z-index: 999;
+        @include laptop {
+            padding: 15px 0;
+        }
+        @include phone-landscape {
+            padding: 15px 0;
+        }
+        &.slideUp {
+            @include translate(0, -136px);
+        }
+        .headerSection__logo {
+            max-width: 280px;
+            @include large-pc {
+                max-width: 250px;
+            }
+            @include medium-pc {
+                max-width: 200px;
+            }
+            @include laptop {
+                max-width: 140px;
+            }
+            @include phone-landscape {
+                max-width: 120px
+            }
+        }
+        .requestBtn {
+            @include padding (15px, 25px, 15px, 25px);
+            @include laptop {
+                @include padding (15px, 15px, 15px, 15px);
+            }
+            img {
+                @include laptop {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    @include tablet {
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+
+.header__height {
+    min-height: 136px;
+    @include xl-large-pc {
+        min-height: 128px;
+    }
+    @include medium-pc {
+        min-height: 120px;
+    }
+    @include laptop {
+        min-height: 98px;
+    }
+    @include tablet {
+        min-height: 66px;
+    }
+}
